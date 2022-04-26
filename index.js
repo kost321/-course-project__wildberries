@@ -72,8 +72,9 @@ const deleteElements = () => {
     productItems.forEach((item) => item.remove());
     console.log(productItems);
     
-    sumPrice.textContent = `All : ${getProduct.length * 0}`
-
+    sumPrice.textContent = `All : ${price = 0}`;
+    
+    
     console.log('asd',[sumPrice]);
 }
 elementDeleteAll.addEventListener('click',deleteElements);
@@ -82,6 +83,7 @@ elementDeleteAll.addEventListener('click',deleteElements);
 
 const sumPrice = document.createElement('div');
 sumPrice.classList.add('sum-price');
+sumPrice.textContent = "All : 0";
 
 let price = 0;
 const sum = (event) => {
@@ -103,7 +105,7 @@ sale.addEventListener('click',sum);
 activePanel.append(elementBascet,elementDeleteAll);
 
 
-Container.append(activePanel, sumPrice,containerProduct);
+Container.append(activePanel,containerProduct, sumPrice);
 
 
 root.append(Container);

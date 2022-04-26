@@ -42,13 +42,17 @@
 }
 
 .sum-price {
+  margin-top: 15px;
+  padding-left: 350px;
   font-size: 20px;
-  top: 260px;
-  left: 300px;
+  position: relative;
 }
 
 .container-product {
-  height: 200px;
+  height: 270px;
+  margin-top: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
   overflow: auto;
 }
 
