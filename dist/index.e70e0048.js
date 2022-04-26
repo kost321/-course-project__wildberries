@@ -539,8 +539,6 @@ const getProduct = (text, price1)=>{
     priceProduct.classList.add('product-price');
     priceProduct.innerHTML = `<span>${price1}<span>`;
     productWrapper.append(productName, priceProduct);
-    // const itemCost = document.querySelector('.goods-card__cost-new');
-    // sumPrice = sumPrice +1;
     return productWrapper;
 };
 const sale = document.querySelector("#sale");
@@ -563,6 +561,10 @@ const deleteElements = ()=>{
     productItems.forEach((item)=>item.remove()
     );
     console.log(productItems);
+    sumPrice.textContent = `All : ${getProduct.length * 0}`;
+    console.log('asd', [
+        sumPrice
+    ]);
 };
 elementDeleteAll.addEventListener('click', deleteElements);
 //------------Sum----------------
@@ -571,11 +573,13 @@ sumPrice.classList.add('sum-price');
 let price = 0;
 const sum = (event)=>{
     const target = event.target;
+    if (!target.classList.contains('fa-cart-shopping')) return;
     const itemPrice = target.closest('.goods-card');
     const productPrice = itemPrice.querySelector('.goods-card__cost-new');
     price += +productPrice.textContent.split('$')[0];
     sumPrice.innerText = `All : ${price.toFixed(2)}$`;
     console.log("product", productPrice);
+    Container.append(sumPrice);
 };
 sale.addEventListener('click', sum);
 activePanel.append(elementBascet, elementDeleteAll);
