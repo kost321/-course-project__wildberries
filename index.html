@@ -6,20 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3d62cc7ce8.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
 
-<body>
+<body class="body">
+    <header>
+        <img src="./logo/logo-v1.svg" alt="" class="logo">
+        <div class="search-wrapper">
+            <input type="text" placeholder="Поиск.." class="search__bar">
+            <ul class="search__list">
+
+            </ul>
+        </div>
+        <a href="" class="shopping__cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <h5 class="cart-title">Корзина</h5>
+        </a>
+    </header>
     <div id="root"></div>
-        <script src="index.js" type="module"></script>
+    <div id="hot-sale"></div>
     <div id="sale"></div>
-        <script src="root.js" type="module"></script>
-    <script
-      src="https://kit.fontawesome.com/190544acb5.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="header.js" type="module"></script>
+    <script src="index.js" type="module"></script>
+    <script src="root.js" type="module"></script>
+    <script src="https://kit.fontawesome.com/190544acb5.js" crossorigin="anonymous"></script>
+   
 </body>
 
 </html>
-
-

@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"l4FI8":[function(require,module,exports) {
+})({"cme9b":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "42036d7a98ade5a7";
-module.bundle.HMR_BUNDLE_ID = "7bf8d3f267beedb8";
+module.bundle.HMR_BUNDLE_ID = "129f2a294d05e64d";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -513,77 +513,30 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"l1HD1":[function(require,module,exports) {
-function hotPromotion(promotions, hotPromotion1) {
-    const hotPromotionContainer = document.createElement('div');
-    hotPromotionContainer.classList.add('customers-slider', 'swiper-container');
-    const hotPromotionWrapper = document.createElement('div');
-    hotPromotionWrapper.classList.add('customers-slider', 'swiper-wrapper');
-    for(var key in promotions){
-        const hotPromotionSlide = document.createElement('div');
-        hotPromotionSlide.classList.add('customers-slider', 'swiper-slide');
-        hotPromotionSlide.scr = promotions[key].img;
-        hotPromotionWrapper.append(hotPromotionSlide);
+},{}],"ah4JD":[function(require,module,exports) {
+const searchInput = document.querySelector('.search__bar');
+const searchList = document.querySelector('.search__list');
+let goods = [];
+fetch('https://62593b6a43fda1299a0a95e4.mockapi.io/goods').then((response)=>response.json()
+).then((response)=>{
+    goods = response;
+});
+function clearList() {
+    while(searchList.firstChild)searchList.removeChild(searchList.firstChild);
+}
+searchInput.addEventListener('input', (e)=>{
+    let inputValue = e.target.value;
+    let searchResult = goods.filter((item)=>item.name.includes(inputValue)
+    );
+    clearList();
+    if (inputValue.length > 0) for (const item1 of searchResult){
+        const resultItem = document.createElement('li');
+        resultItem.classList.add('result-item');
+        const text = document.createTextNode(item1.name);
+        resultItem.appendChild(text);
+        searchList.appendChild(resultItem);
     }
-    hotPromotionContainer.append(hotPromotionWrapper);
-    hotPromotion1.append(hotPromotionContainer);
-}
-function topSale(goods, root) {
-    const topSaleElement = document.createElement('div');
-    topSaleElement.classList.add('container-wrapper');
-    for(var key in goods){
-        const goodsCard = document.createElement('div');
-        goodsCard.classList.add('goods-card');
-        const goodsCardImage = document.createElement('div');
-        goodsCardImage.classList.add('goods-card__image');
-        const goodsCardImageLink = document.createElement('img');
-        goodsCardImageLink.classList.add('good-card__image-link');
-        goodsCardImageLink.src = goods[key].img;
-        const goodsCardImageClue = document.createElement('a');
-        goodsCardImageClue.classList.add('goods-card__image-clue');
-        goodsCardImageClue.textContent = 'Быстрый просмотр';
-        const goodsCardSale = document.createElement('div');
-        goodsCardSale.classList.add('goods-card__sale');
-        goodsCardSale.textContent = `-${goods[key].sale}%`;
-        const goodsCardCart = document.createElement('i');
-        goodsCardCart.classList.add('fa-solid', 'fa-cart-shopping');
-        goodsCardImage.append(goodsCardImageLink, goodsCardImageClue, goodsCardSale, goodsCardCart);
-        const goodsCardCost = document.createElement('div');
-        goodsCardCost.classList.add('goods-card__cost');
-        const goodsCardNewCost = document.createElement('div');
-        goodsCardNewCost.classList.add('goods-card__cost-new');
-        let newCost = goods[key].cost - goods[key].cost / 100 * goods[key].sale;
-        newCost = newCost.toFixed(2);
-        goodsCardNewCost.textContent = `${newCost}$`;
-        const goodsCardOldCost = document.createElement('div');
-        goodsCardOldCost.classList.add('goods-card__cost-old');
-        goodsCardOldCost.textContent = `${goods[key].cost}$`;
-        goodsCardCost.append(goodsCardNewCost, goodsCardOldCost);
-        const goodsCardName = document.createElement('div');
-        goodsCardName.classList.add('goods-card__name');
-        goodsCardName.textContent = `${goods[key].name}`;
-        goodsCard.append(goodsCardImage, goodsCardCost, goodsCardName);
-        topSaleElement.append(goodsCard);
-    }
-    root.append(topSaleElement);
-}
-let sale = document.getElementById('sale');
-let hotSale = document.getElementById('hot-sale');
-const urlGoods = 'https://62593b6a43fda1299a0a95e4.mockapi.io/goods';
-const urlPromotions = 'https://62593b6a43fda1299a0a95e4.mockapi.io/HotSale';
-async function getData(url) {
-    const response = await fetch(url);
-    return response.json();
-}
-(async ()=>{
-    console.log(1);
-    const goods = await getData(urlGoods);
-    console.log(goods);
-    topSale(goods, sale);
-    console.log(sale);
-    const hotSaleImg = await getData(urlPromotions);
-    hotPromotion(hotSaleImg, hotSale);
-})();
+});
 
-},{}]},["l4FI8","l1HD1"], "l1HD1", "parcelRequireab70")
+},{}]},["cme9b","ah4JD"], "ah4JD", "parcelRequireab70")
 

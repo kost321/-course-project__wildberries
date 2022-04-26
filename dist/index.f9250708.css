@@ -1,7 +1,13 @@
+.body {
+  background-color: #00000026;
+  margin: 0;
+  padding: 0;
+}
+
 .Container {
   max-width: 500px;
   height: 400px;
-  background-color: #b498ab;
+  background-color: #d0f;
   border-radius: 20px;
   margin-left: auto;
   margin-right: 0;
@@ -54,6 +60,11 @@
   padding-left: 10px;
   padding-right: 10px;
   overflow: auto;
+}
+
+#sale {
+  background-color: #6de0f0;
+  border-radius: 20px;
 }
 
 .container-wrapper {
@@ -131,5 +142,69 @@
 
 .goods-card__cost-old {
   text-decoration: line-through;
+}
+
+header {
+  background-color: #cc25e6;
+  flex-direction: row;
+  justify-content: space-between;
+  display: flex;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  color: #fff;
+  padding: 5px 25px 10px;
+}
+
+.search-wrapper {
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0 20px;
+  display: flex;
+}
+
+.search__bar {
+  height: 50%;
+  width: 100%;
+  background-color: #e74affe5;
+  border: none;
+  border-radius: .3cm;
+  margin: auto 0;
+}
+
+.search__bar:hover {
+  background-color: #f5b4ff;
+  transition: all .2s;
+}
+
+.search__bar:focus {
+  background-color: #fbe3fffa;
+  border: none;
+}
+
+.search__list {
+  overflow: auto;
+}
+
+.result-item {
+  z-index: 999;
+  padding: 10px;
+  position: absolute;
+}
+
+.shopping__cart {
+  color: #fff;
+  padding: 5px 10px 25px;
+  text-decoration: none;
+}
+
+.fa-cart-shopping {
+  margin: 0 auto;
+}
+
+.cart-title {
+  margin: 0;
 }
 
