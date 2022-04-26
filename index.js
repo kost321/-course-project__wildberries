@@ -5,6 +5,7 @@
 
  const Container = document.createElement('div');
 Container.classList.add('Container');
+Container.style.display = 'none';
 
 const activePanel = document.createElement('div');
 activePanel.classList.add('container__block');

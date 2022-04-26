@@ -7,10 +7,14 @@
 .Container {
   max-width: 500px;
   height: 400px;
+  z-index: 1;
   background-color: #d0f;
   border-radius: 20px;
   margin-left: auto;
   margin-right: 0;
+  position: fixed;
+  left: 73%;
+  overflow: hidden;
 }
 
 .container__block {

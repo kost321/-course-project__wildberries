@@ -29,3 +29,29 @@ searchInput.addEventListener('input', (e) => {
     }
     
 });
+
+//---------Show-----------
+let clickBuscet =  document.querySelector('.cart-title');
+const showBuscet = () => {
+
+   let buscetElement = document.querySelector('.Container');
+    if (buscetElement.style.display === 'none'){
+        buscetElement.style.display = 'block';
+    } else {
+        buscetElement.style.display = 'none';
+    }  
+    
+  console.log(buscetElement);
+  }
+  
+  clickBuscet.addEventListener('click',showBuscet);
+
+  //----------block-----------
+  
+    const blockBuscet = () => {
+    buscetElement = document.querySelector('.Container');
+    buscetElement.style.display = 'none';
+  console.log(buscetElement);
+  }
+  
+  clickBuscet.addEventListener('click',showBuscet);
