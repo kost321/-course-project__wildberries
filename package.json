@@ -20,6 +20,8 @@
     "parce": "^1.2.7",
     "parcel": "^2.4.1"
   },
-  "dependencies": {},
+  "dependencies": {
+    "swiper": "^8.1.4"
+  },
   "description": ""
 }

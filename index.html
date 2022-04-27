@@ -15,22 +15,47 @@
         <img src="./logo/logo-v1.svg" alt="" class="logo">
         <div class="search-wrapper">
             <input type="text" placeholder="Поиск.." class="search__bar">
-            <ul class="search__list">
-
-            </ul>
         </div>
         <div class="shopping__cart">
-            <i class="fa-solid fa-cart-shopping"></i>
             <h5 class="cart-title">Корзина</h5>
         </div>
     </header>
     <div id="root"></div>
-    <div id="hot-sale"></div>
+    <div id="hot-sale">
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <div class="slide-image">
+                    <img src="./image/1.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-image">
+                    <img src="./image/2.jpg" alt="">
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <div class="slide-image">
+                <img src="./image/3.jpg" alt="">
+            </div></div>
+        </div>
+             <! - Если нужен пейджер->
+        <div class="swiper-pagination"></div>
+        
+             <! - Если вам нужна навигационная кнопка->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        
+             <! - Если вам нужна полоса прокрутки->
+        <div class="swiper-scrollbar"></div>
+    
+        </div>
+    </div>
     <div id="sale"></div>
     <script src="header.js" type="module"></script>
+    <script src="swiper.min.js" type="module"></script>
     <script src="index.js" type="module"></script>
     <script src="root.js" type="module"></script>
-    <script src="https://kit.fontawesome.com/190544acb5.js" crossorigin="anonymous"></script>
 
 </body>
 

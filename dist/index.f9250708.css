@@ -1,14 +1,14 @@
 .body {
-  background-color: #00000026;
+  background-color: #c7b8b826;
   margin: 0;
   padding: 0;
 }
 
 .Container {
-  max-width: 500px;
-  height: 400px;
+  width: 410px;
+  height: 430px;
   z-index: 1;
-  background-color: #d0f;
+  background-color: #fff;
   border-radius: 20px;
   margin-left: auto;
   margin-right: 0;
@@ -53,7 +53,7 @@
 
 .sum-price {
   margin-top: 15px;
-  padding-left: 350px;
+  padding-left: 240px;
   font-size: 20px;
   position: relative;
 }
@@ -67,7 +67,6 @@
 }
 
 #sale {
-  background-color: #6de0f0;
   border-radius: 20px;
 }
 
@@ -148,10 +147,21 @@
   text-decoration: line-through;
 }
 
+.swiper-container {
+  width: 600px;
+  height: 300px;
+}
+
+img {
+  max-width: 600px;
+  max-height: 300px;
+}
+
 header {
   background-color: #cc25e6;
   flex-direction: row;
   justify-content: space-between;
+  margin-bottom: 20px;
   display: flex;
 }
 
@@ -163,7 +173,6 @@ header {
 }
 
 .search-wrapper {
-  flex-direction: column;
   flex-grow: 1;
   padding: 0 20px;
   display: flex;
@@ -200,8 +209,10 @@ header {
 
 .shopping__cart {
   color: #fff;
-  padding: 5px 10px 25px;
+  align-items: center;
+  padding: 0 20px;
   text-decoration: none;
+  display: flex;
 }
 
 .fa-cart-shopping {
@@ -209,6 +220,7 @@ header {
 }
 
 .cart-title {
+  cursor: pointer;
   margin: 0;
 }
 
