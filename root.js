@@ -48,4 +48,5 @@ async function getData(url) {
 (async () => {
 const goods = await getData(urlGoods);
 topSale(goods, sale);
+
 })()
