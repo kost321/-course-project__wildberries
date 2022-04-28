@@ -1,18 +1,3 @@
-function hotPromotion (promotions, hotPromotion) {
-  const hotPromotionContainer = document.createElement('div');
-  hotPromotionContainer.classList.add('customers-slider', 'swiper-container');
-  const hotPromotionWrapper = document.createElement('div');
-  hotPromotionWrapper.classList.add('customers-slider','swiper-wrapper');
-  for (var key in promotions) {
-      const hotPromotionSlide = document.createElement('div');
-      hotPromotionSlide.classList.add('customers-slider','swiper-slide');
-      hotPromotionSlide.scr = promotions[key].img;
-      hotPromotionWrapper.append(hotPromotionSlide);
-  }
-  hotPromotionContainer.append(hotPromotionWrapper);
-  hotPromotion.append(hotPromotionContainer);
-};
-
 function topSale (goods, root) {
   const topSaleElement = document.createElement('div');
   topSaleElement.classList.add('container-wrapper');
@@ -54,21 +39,13 @@ function topSale (goods, root) {
 }
 
 let sale = document.getElementById('sale');
-let hotSale = document.getElementById('hot-sale');
 const urlGoods = 'https://62593b6a43fda1299a0a95e4.mockapi.io/goods';
-const urlPromotions = 'https://62593b6a43fda1299a0a95e4.mockapi.io/HotSale';
 
 async function getData(url) {
  const response = await fetch(url);
  return response.json();
 }
 (async () => {
-console.log(1)
 const goods = await getData(urlGoods);
-console.log(goods);
 topSale(goods, sale);
-console.log(sale)
-
-const hotSaleImg = await getData(urlPromotions);
-hotPromotion(hotSaleImg, hotSale);
 })()
