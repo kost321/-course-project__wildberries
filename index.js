@@ -1,4 +1,34 @@
- const root = document.getElementById('root');
+// -------------- Swiper --------------
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/swiper-bundle.js';
+
+// import styles bundle
+import 'swiper/swiper-bundle.css';
+
+const swiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    speed: 400,
+    autoHeight: true,
+    watchSlidesProgress: true,
+    autoplay: {
+        delay: 4000,
+    },
+
+    // If we need pagination
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    // Navigation arrows
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+});
+
+const root = document.getElementById('root');
 
 //----------shopping cart--------------
 

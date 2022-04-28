@@ -140,13 +140,16 @@
     text-decoration: line-through;
 }
 
-.swiper-container{
-    width: 600px;
-    height: 300px;
+.swiper-container {
+
 }
-img{
-    max-width: 600px;
-    max-height: 300px;
+
+.slide-image > img {
+    width: 100%;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    top: 34% !important;
 }
 
 
