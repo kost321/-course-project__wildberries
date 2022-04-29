@@ -1,4 +1,4 @@
-const searchInput = document.querySelector('.search__bar');
+/*const searchInput = document.querySelector('.search__bar');
 const searchList = document.querySelector('.search__list');
 
 let goods = [];
@@ -55,3 +55,4 @@ const showBuscet = () => {
   }
   
   clickBuscet.addEventListener('click',showBuscet);
+  */

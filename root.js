@@ -1,3 +1,52 @@
+// HEADER
+
+const searchInput = document.querySelector('.search__bar');
+const sale = document.getElementById('sale');
+
+const urlGoods = 'https://62593b6a43fda1299a0a95e4.mockapi.io/goods';
+let goods = [];
+async function getData(url) {
+    const response = await fetch(url);
+    return response.json();
+}
+
+(async () => {
+    goods = await getData(urlGoods);
+    topSale(goods, sale);
+})()
+
+function clearSale(){
+    while (sale.firstChild){
+        sale.removeChild(sale.firstChild)
+    }
+}
+
+searchInput.addEventListener('input', (e) => {
+    let inputValue = e.target.value;
+    let searchResult = goods.filter(item => item.name.includes(inputValue));
+    if (inputValue.length > 0) {
+        clearSale();
+        topSale(searchResult, sale);
+    } else {
+        clearSale();
+        topSale(goods, sale);
+    }
+});
+
+//---------Show-----------
+let clickBuscet =  document.querySelector('.cart-title');
+const showBuscet = () => {
+    console.log('баскет')
+    let buscetElement = document.querySelector('.Container');
+    if (buscetElement.style.display === 'none'){
+        buscetElement.style.display = 'block';
+    } else {
+        buscetElement.style.display = 'none';
+    }
+}
+
+clickBuscet.addEventListener('click',showBuscet);
+
 function topSale (goods, root) {
   const topSaleElement = document.createElement('div');
   topSaleElement.classList.add('container-wrapper');
@@ -37,16 +86,4 @@ function topSale (goods, root) {
   }
   root.append(topSaleElement);
 }
-
-let sale = document.getElementById('sale');
-const urlGoods = 'https://62593b6a43fda1299a0a95e4.mockapi.io/goods';
-
-async function getData(url) {
- const response = await fetch(url);
- return response.json();
-}
-(async () => {
-const goods = await getData(urlGoods);
-topSale(goods, sale);
-
-})()
+ 
